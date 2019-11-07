@@ -109,18 +109,26 @@ function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName,
                         "충전 상태 : " + Device.isCharging() + "\n" +
                         "헌재 배터리 상태 : " + Device.getBatteryLevel() + "\n"
                     )
+                    preChat_flag2 = true;
                 } // 정체 main_com 끝
+                
                 else if(msg === "/호출") {
                     for(var i=0;i<op_list.length;i++) {
                         replier.reply(op_list[i], getDate() + "\n" + sender + " 이(가) 호출하였습니다.");
                     }
-                    // replier.reply("어미새/남", getDate() + sender + "가 호출하였습니다.");
-                    // replier.reply("추노꾼/남", "호출 테스트입니다.");
+                    // replier.reply("엘또/남", getDate() + "\n" + sender + " 이(가) 호출하였습니다.");
+                    // replier.reply("어미새 / 남", getDate() + "\n" + sender + " 이(가) 호출하였습니다.");
+                    // replier.reply("추노꾼/남", getDate() + "\n" + sender + " 이(가) 호출하였습니다.");
                     // replier.reply("엘또/남", getDate() + sender + "가 호출하였습니다.");
                     // replier.reply("뺌/남", "호출 테스트입니다.");
                     // replier.reply("홍냥/여", "호출 테스트입니다.");
+                    preChat_flag2 = true;
+                } else if(msg.indexOf("/호출") == 0 && msg.indexOf("테스트") != -1) {
+                    replier.reply("엘또/남", getDate() + "\n" + sender + " 이(가) 호출하였습니다.");
+                    preChat_flag2 = true;
                 }
-                else if (msg.indexOf("-") > -1) {
+
+                else if (msg.indexOf("-") !== -1) {
                     var main_com = msg.split("-")[0].substring(1);  // - 앞부분을 자르고 /을 제거
                     var sub_com = msg.split("-")[1].split(" ")[0]; // - 뒷부분에서 공백 앞까지 만 자르고
 //                     var input_value = msg.split("-")[1].split(" ")[1];
