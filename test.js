@@ -111,9 +111,12 @@ function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName,
                     )
                 } // 정체 main_com 끝
                 else if(msg === "/호출") {
+                    for(var i=0;i<op_list.length();i++) {
+                        replier.reply(op_list[i], getDate() + sender + "가 호출하였습니다.");
+                    }
                     // replier.reply("어미새/남", getDate() + sender + "가 호출하였습니다.");
                     // replier.reply("추노꾼/남", "호출 테스트입니다.");
-                    replier.reply("엘또/남", getDate() + sender + "가 호출하였습니다.");
+                    // replier.reply("엘또/남", getDate() + sender + "가 호출하였습니다.");
                     // replier.reply("뺌/남", "호출 테스트입니다.");
                     // replier.reply("홍냥/여", "호출 테스트입니다.");
                 }
@@ -183,7 +186,7 @@ function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName,
 function getDate() {
     var d = new Date();
     var currentDate = d.getFullYear() + "년 " + (d.getMonth() + 1) + "월 " + d.getDay() + "일";
-    var currentTime = d.getHours() + "시 " + d.getMinutes() "분 " + d.getSeconds() + "초";
+    var currentTime = d.getHours() + "시 " + d.getMinutes() + "분 " + d.getSeconds() + "초";
     return currentDate + " " + currentTime;
 }
 
