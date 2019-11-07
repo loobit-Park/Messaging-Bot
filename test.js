@@ -111,8 +111,8 @@ function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName,
                     )
                 } // 정체 main_com 끝
                 else if(msg === "/호출") {
-                    for(var i=0;i<op_list.length();i++) {
-                        replier.reply(op_list[i], getDate() + sender + "가 호출하였습니다.");
+                    for(var i=0;i<op_list.length;i++) {
+                        replier.reply(op_list[i], getDate() + "\n" + sender + " 이(가) 호출하였습니다.");
                     }
                     // replier.reply("어미새/남", getDate() + sender + "가 호출하였습니다.");
                     // replier.reply("추노꾼/남", "호출 테스트입니다.");
