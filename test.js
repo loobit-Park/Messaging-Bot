@@ -180,6 +180,14 @@ function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName,
     preChat_flag2 = false;
 } // 함수 종료
 
+function getDate() {
+    var d = new Date();
+    var currentDate = d.getFullYear() + "년 " + (d.getMonth() + 1) + "월 " + d.getDay() + "일";
+    var currentTime = d.getHours() + "시 " + d.getMinutes() "분 " + d.getSeconds() + "초";
+    return currentDate + " " + currentTime;
+}
+
+
 function getRandom(percent) {
     var random = Math.floor(Math.random() * percent) + 1;
     Log.info(random);
