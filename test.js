@@ -111,11 +111,11 @@ function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName,
                     )
                 } // 정체 main_com 끝
                 else if(msg === "/호출") {
-                    replier.reply("어미새/남", "호출 테스트입니다.");
-                    replier.reply("추노꾼/남", "호출 테스트입니다.");
-                    replier.reply("엘또/남", "호출 테스트입니다.");
-                    replier.reply("뺌/남", "호출 테스트입니다.");
-                    replier.reply("홍냥/여", "호출 테스트입니다.");
+                    // replier.reply("어미새/남", getDate() + sender + "가 호출하였습니다.");
+                    // replier.reply("추노꾼/남", "호출 테스트입니다.");
+                    replier.reply("엘또/남", getDate() + sender + "가 호출하였습니다.");
+                    // replier.reply("뺌/남", "호출 테스트입니다.");
+                    // replier.reply("홍냥/여", "호출 테스트입니다.");
                 }
                 else if (msg.indexOf("-") > -1) {
                     var main_com = msg.split("-")[0].substring(1);  // - 앞부분을 자르고 /을 제거
