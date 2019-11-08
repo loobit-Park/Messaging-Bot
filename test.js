@@ -34,7 +34,7 @@ function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName,
     preChat_flag = true;
 
     // 채팅방 필터
-    if (room === "Korea EDM Festival" || room === "Test") {
+    if (room === "KEF" || room === "Test") {
 
         /*
         if(msg.indexOf("봇") != -1 || msg.indexOf("안내님") != -1 ) {
