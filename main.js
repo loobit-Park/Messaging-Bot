@@ -35,7 +35,7 @@ function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName,
     preChat_flag = true;
 
     // 채팅방 필터
-    if (room === "Korea EDM Festival" || room === "Test") {
+    if (room === "KEF" || room === "Test") {
 
         // 운영진 목록에 있는지 확인
         if (op_list.indexOf(sender) !== -1) {
