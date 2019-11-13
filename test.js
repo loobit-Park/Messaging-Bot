@@ -34,7 +34,7 @@ function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName,
     preChat_flag = true;
 
     // 채팅방 필터
-    if (room === "Korea EDM Festival" || room === "Test") {
+    if (room === "KEF" || room === "Test") {
 
         /*
         if(msg.indexOf("봇") != -1 || msg.indexOf("안내님") != -1 ) {
@@ -107,7 +107,7 @@ function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName,
                         "안드로이드 버전 : " + Device.getAndroidVersionName() + "\n" +
                         "현재 배터리 온도 : " + Device.getBatteryTemperature() + "\n" +
                         "충전 상태 : " + Device.isCharging() + "\n" +
-                        "헌재 배터리 상태 : " + Device.getBatteryLevel() + "\n"
+                        "헌재 배터리 상태 : " + Device.getBatteryLevel()
                     )
                     preChat_flag2 = true;
                 } // 정체 main_com 끝
