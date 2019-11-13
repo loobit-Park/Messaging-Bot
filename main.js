@@ -1,5 +1,4 @@
-const scriptName = "main.js";
-// 2019.11.13 박상현 수정 : 왜 쓰는지 모르겠지만 일단 파일명 바꼈으니 같이 수정 (나중에 알려줘요)
+const scriptName = "test.js";
 
 var preChat = null;
 var preChat_delay = 10;
