@@ -18,7 +18,7 @@ var getDB = DataBase.getDataBase("op_list");
 var op_list;
 
 if (getDB === "") {
-    op_list = ["엘또/남"];
+    op_list = ["엘또/남", "복실/남"];
 } else {
     op_list = getDB.split(",");
 }
@@ -125,6 +125,11 @@ function command_list(msg) {
         break;
         case "/정보" :
             return_msg = "2019.12.31 CBP 페스티벌 (장소:DDP)";
+        break;
+        case "/외국인 안내":
+            return_msg = "한국인을 위한 페스티벌 방이므로\n한국어를 사용하지 못한다면\n이 방에서 활동하실 수가 없습니다.\n----------------------------------\n" +
+                                    "This GroupChat is For People\nWho Can Speak Korean.\n\nIf You Can't Speak Korean,\n" +
+                                    "You Can't Hang out Here.\n\nI'm Sorry, But Plz Leave This Chat";
         break;
         default :
             return_msg = "없는 명령어입니다.[] 는 변수입니다.\n명령어 목록 :\n" +
