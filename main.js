@@ -1,4 +1,5 @@
-const scriptName = "test.js";
+const scriptName = "main.js";
+// test.js -> main.js
 
 var preChat = null;
 var preChat_delay = 10;
