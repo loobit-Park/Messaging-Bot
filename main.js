@@ -46,11 +46,13 @@ function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName,
             }
             //////////// 올바른 포맷의 명령어일 경우
             else if (msg.indexOf("/") === 0) {
+                // // 2019.11.13 박상현 수정 : command_list 에서 msg 값에 따라 메세지 값 리턴
                 replier.reply(command_list(msg));
-            } // command인지
-        } // 운영진인지
+                preChat_flag2 = true;
+            }
+        }
 
-    } // KEF방인지, /가 있는지
+    }
 
     java.lang.Thread.sleep(preChat_delay * 1000);
     preChat = null;
@@ -103,6 +105,7 @@ function command_explain(replier) {
     );
 }
 
+// 2019.11.13 박상현 추가 : msg에 따른 리턴데이터 함수화
 function command_list(msg) {
     var return_msg = "";
     switch(msg) {
