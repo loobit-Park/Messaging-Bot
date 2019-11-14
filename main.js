@@ -6,11 +6,15 @@ var preChat_delay = 10;
 var preChat_flag = false;
 var preChat_flag2 = false;
 
-var main_com_list = ["운영진", "안내", "공지"];
-const com_list = Array(
-    Array("운영진", "목록", "추가", "삭제"),
-    Array("공지"),
-    Array("안내")
+const fes_list = Array(
+    Array('존나페', 'Vagagee VIPHEX13', '성수 S Factory', '2019.11.16'),
+    Array('하드샷', 'Zayda', 'VOFOL', '2019.11'),
+    Array('월드카운트다운', 'Cass', 'DDP', '2019.12.31'),
+    Array('UMF', 'Richard Kim', '서울', '2020.06.20'),
+    Array('벡터', 'Daegu', '대구스타디움', '2020.05.09'),
+    Array('오타디움', 'Mercedes-Benz', '', '2020.06.27'),
+    Array('워터밤서울', 'Sprite', '서울', '2020.07.17-19'),
+    Array('워터밤인천', 'Paradise City', '인천', '2020.08.08')
 );
 
 
@@ -140,8 +144,19 @@ function command_list(msg) {
             //                 "    (인싸,존버,눈팅 세개 아무거나 선택하면됨)";
 
         break;
-        case "/정보" :
-            return_msg = "2019.12.31 CBP 페스티벌 (장소:DDP)";
+        case "/페스티벌 안내" :
+            var fes_msg = "";
+            var numbering = 0;
+
+            for(i=0; i<fes_list.length; i++) {
+                numbering = i+1;
+                fes_msg += numbering+". "+fes_list[i][0]+"\n";
+                fes_msg += " - 후원사 : "+fes_list[i][1]+"\n";
+                fes_msg += " - 장소 : "+fes_list[i][2]+"\n";
+                fes_msg += " - 일자 : "+fes_list[i][3]+"\n\n";
+            }
+
+            return_msg = fes_msg;
         break;
         case "/외국인 안내":
             return_msg = "한국인을 위한 페스티벌 방이므로\n한국어를 사용하지 못한다면\n이 방에서 활동하실 수가 없습니다.\n----------------------------------\n" +
@@ -150,16 +165,11 @@ function command_list(msg) {
         break;
         default :
             return_msg = "없는 명령어입니다.[] 는 변수입니다.\n명령어 목록 :\n" +
-                "운영진\n" +
-                "-목록\n" +
-                "-추가 [닉네임]\n" +
-                "-제거 [닉네임]\n" +
-                "안내\n" +
-                "-외국인\n" +
-                "공지\n\n" +
+                "공지\n" +
+                "페스티벌 안내\n" +
+                "외국인 안내\n\n" +
                 "예시:\n" +
-                "/운영진-목록\n" +
-                "/운영진-추가 엘또/남";
+                "/공지\n";
         break;
     }
 
