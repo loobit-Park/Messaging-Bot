@@ -25,7 +25,7 @@ var getDB = DataBase.getDataBase("op_list");
 var op_list;
 
 if (getDB === "") {
-    op_list = ["엘또/남", "복실/남"];
+    op_list = ["엘또/남", "복실/남", "미래/여"];
 } else {
     op_list = getDB.split(",");
 }
@@ -153,7 +153,6 @@ function command_list(msg) {
             for(i=0; i<fes_list.length; i++) {
                 numbering = i+1;
                 fes_msg += numbering+". "+fes_list[i][0]+"\n";
-                fes_msg += " - 후원사 : "+fes_list[i][1]+"\n";
                 fes_msg += " - 장소 : "+fes_list[i][2]+"\n";
                 fes_msg += " - 일자 : "+fes_list[i][3]+"\n\n";
             }
