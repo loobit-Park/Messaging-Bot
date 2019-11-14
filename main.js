@@ -17,6 +17,8 @@ const fes_list = Array(
     Array('워터밤인천', 'Paradise City', '인천', '2020.08.08')
 );
 
+// 전체보기 변수
+var allsee = "\u200b".repeat(500); 
 
 var getDB = DataBase.getDataBase("op_list");
 
@@ -147,7 +149,7 @@ function command_list(msg) {
         case "/페스티벌 안내" :
             var fes_msg = "";
             var numbering = 0;
-
+            fes_msg += "§페스티벌 안내§" + allsee + "\n\n"
             for(i=0; i<fes_list.length; i++) {
                 numbering = i+1;
                 fes_msg += numbering+". "+fes_list[i][0]+"\n";
