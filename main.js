@@ -32,6 +32,16 @@ if (getDB === "") {
 //var op_list = ["어미새 / 남", "추노꾼/남", "뺌/남", "홍냥/여", "엘또/남"];
 var op_com_list = ["목록", "추가", "해제"];
 
+
+//TODO: 호출 되는지 테스트 필요.
+// Python Sever API 호출 테스트 Functinos
+// 페스티벌 정보 호출 API
+function callServerApi() {
+    let obj = JSON.parse(Jsoup.connect("106.10.33.142:18080/FestivalInfo").ignoreContentType(true).get().text());
+    Log.info(obj)
+}
+
+
 function response(room, msg, sender, isGroupChat, replier, ImageDB, packageName, threadId) {
 
 //    if(preChat == msg) {
