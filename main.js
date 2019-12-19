@@ -26,7 +26,7 @@ var getDB = DataBase.getDataBase("op_list");
 var op_list;
 
 if (getDB === "") {
-    op_list = ["엘또/남", "복실/남"];
+    op_list = ["엘또/남", "복실/남", "미래/여"];
 } else {
     op_list = getDB.split(",");
 }
